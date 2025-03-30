@@ -1,62 +1,104 @@
+<img src="https://github.com/CyberMedina/Centros-de-acopio-verdIES/blob/main/media/Banner%20VerdIes%20-%20Centro%20acopios.png?raw=true" width="1000">
 
-<p align="center">
+# 🌍 VerdIES  
 
-</p>
+DESCRIPCION  
 
-## About VerdIES
+**[Repositorio de VerdIES](#)**  
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📚 Tabla de Contenidos  
+- [Cómo funciona](#-cómo-funciona)  
+- [Características](#-características)  
+- [Tecnologías Usadas](#-tecnologías-usadas)  
+- [Instalación](#-instalación)  
+- [Uso](#-uso)  
+- [Contacto](#-contacto)  
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ⚙️ Cómo funciona  
+1. En el archivo `info_centro_acopio.py` se encuentra un JSON que define los tipos de materiales aceptados en el centro de acopio.  
+2. Se habilita la cámara y se usa la librería **YOLOv5** con un modelo genérico para reconocer objetos.  
+3. Si un objeto es reconocido durante **más de 3 segundos**, se toma una foto y se envía a la API de **OpenAI** para clasificarlo según los materiales definidos en el JSON.  
+4. El JSON de respuesta es procesado y se suman los materiales clasificados.  
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🌟 Características  
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### ✅ **Configuración de materiales**  
+- El archivo `info_centro_acopio.py` permite modificar y definir los materiales aceptados en el centro de acopio.  
+- La configuración es dinámica, por lo que puedes agregar o eliminar materiales fácilmente.
+<img src="https://github.com/CyberMedina/Centros-de-acopio-verdIES/blob/main/media/Materiales%20aceptados.jpg?raw=true" width="400">  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🎯 **Reconocimiento de objetos**  
+- Utiliza **YOLOv5** para detectar objetos en tiempo real mediante la cámara.  
+- La detección es rápida y eficiente gracias al uso de **Pytorch**.  
 
-## Laravel Sponsors
+### 📸 **Clasificación con IA**  
+- Al detectar un objeto durante más de 3 segundos, se captura una foto.  
+- La foto es enviada a la **API de OpenAI** para identificar el tipo de material.  
+- La clasificación se realiza basándose en los materiales configurados en el JSON.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### 📊 **Registro de materiales**  
+- Los materiales clasificados se suman automáticamente en un registro.  
+- Esto permite llevar un seguimiento de los materiales reciclados.  
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Ejemplos de detección
 
-## Contributing
+- Tapa plastica
+<img src="https://github.com/CyberMedina/Centros-de-acopio-verdIES/blob/main/media/tapas_plastica.gif?raw=true" width="400">
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Botella plasticas
+<img src="https://github.com/CyberMedina/Centros-de-acopio-verdIES/blob/main/media/botella.gif?raw=true" width="400">
 
-## Code of Conduct
+- Bombillo
+<img src="https://github.com/CyberMedina/Centros-de-acopio-verdIES/blob/main/media/bombilla.gif?raw=true" width="400">
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 🛠️ Tecnologías Usadas  
+- **Frontend:** JavaScript (Socket.io)  
+- **Backend:** Python, Flask, Flask-SocketIO  
+- **IA:** YOLOv5, Pytorch, OpenAI API  
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## ⚙️ Instalación  
+1. Clona el repositorio:  
+   ```bash
+   git clone https://github.com/CyberMedina/VerdIES.git
+   ```  
+2. Instala las dependencias:  
+   ```bash
+   pip install -r requirements.txt
+   ```  
+3. Crea el archivo `.env` basado en `.env.template` y añade las credenciales de la API de OpenAI:  
+   ```bash
+   OPENAI_API_KEY="tu-api-key"
+   ```  
+4. Ejecuta el servidor:  
+   ```bash
+   flask run
+   ```  
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## 🚀 Uso  
+- Abre la aplicación.  
+- Habilita la cámara y enfoca un objeto.  
+- Si el objeto es detectado por más de **3 segundos**, se enviará a la API de OpenAI para clasificación.  
+- Los materiales identificados se sumarán automáticamente en el registro.  
+
+---
+
+## 📬 Contacto
+
+- ✉️ **Correo:** [jhonatanmedina5255@gmail.com](mailto:jhonatanmedina5255@gmail.com)
+- 💼 **LinkedIn:** <a href="https://www.linkedin.com/in/jhonatan-jazmil-medina-aguirre-28862a358" target="_blank">www.linkedin.com/in/jhonatan-jazmil-medina-aguirre-28862a358</a>
+
+
+---
+
+💡 **¡Contribuye al reciclaje inteligente con VerdIES!** 😎  
