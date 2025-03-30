@@ -1,4 +1,4 @@
-<img src="https://github.com/CyberMedina/Centros-de-acopio-verdIES/blob/main/media/Banner%20VerdIes%20-%20Centro%20acopios.png?raw=true" width="1000">
+<img src="https://github.com/CyberMedina/VerdIES/blob/main/media/verdies_bannerClaro.png?raw=true" width="1000">
 
 # 🌍 VerdIES  
 
