@@ -116,11 +116,17 @@
                 <div class="app-brand demo ">
                     <a href="/admin/inicio" class="app-brand-link">
                         <span class="app-brand-logo demo">
-                            <img src="https://res.cloudinary.com/dxtlbsa62/image/upload/v1717962322/Verdies/srx3xflk0atk71jzrmdq.png"
+                            <img src="{{ asset('assets/img/logo/VerdIESLogo_sin_letras.png') }}"
                                 alt="" width="50">
 
                         </span>
-                        <span class="app-brand-text demo menu-text fw-bold ms-2 span-firstWord">Verd<span
+
+                        <style>
+                            html:not([dir=rtl]) .ms-2 {
+                                margin-left: -0.6rem !important;
+                            }
+                        </style>
+                        <span class="app-brand-text demo menu-text fw-bold ms-2 span-firstWord">erd<span
                                 class="span-enphasisWord">IES</span></span>
                     </a>
 
@@ -136,35 +142,37 @@
                 <ul class="menu-inner py-1">
 
                     @foreach (Session::get('privilegios') as $modulo)
-                        <li class="menu-item">
-                            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                <i class="menu-icon tf-icons {{ $modulo['icono'] }}"></i>
-                                <div data-i18n="{{ $modulo['nombre'] }}">{{ $modulo['nombre'] }}</div>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons {{ $modulo['icono'] }}"></i>
+                            <div data-i18n="{{ $modulo['nombre'] }}">{{ $modulo['nombre'] }}</div>
 
-                            </a>
-                            @if (!empty($modulo['submodulos']))
-                                <ul class="menu-sub">
-                                    @foreach ($modulo['submodulos'] as $submodulo)
-                                        <li class="menu-item">
-                                            @if ($submodulo['enlace'])
-                                                <a href="{{ route($submodulo['enlace']) }}" target=""
-                                                    class="menu-link">
-                                                    <div data-i18n="{{ $submodulo['nombre'] }}">
-                                                        {{ $submodulo['nombre'] }}</div>
+                        </a>
+                        @if (!empty($modulo['submodulos']))
+                        <ul class="menu-sub">
+                            @foreach ($modulo['submodulos'] as $submodulo)
+                            <li class="menu-item">
+                                @if ($submodulo['enlace'])
+                                <a href="{{ route($submodulo['enlace']) }}" target=""
+                                    class="menu-link">
+                                    <div data-i18n="{{ $submodulo['nombre'] }}">
+                                        {{ $submodulo['nombre'] }}
+                                    </div>
 
-                                                </a>
-                                            @else
-                                                <a href="" target="" class="menu-link">
-                                                    <div data-i18n="{{ $submodulo['nombre'] }}">
-                                                        {{ $submodulo['nombre'] }}</div>
+                                </a>
+                                @else
+                                <a href="" target="" class="menu-link">
+                                    <div data-i18n="{{ $submodulo['nombre'] }}">
+                                        {{ $submodulo['nombre'] }}
+                                    </div>
 
-                                                </a>
-                                            @endif
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            @endif
-                        </li>
+                                </a>
+                                @endif
+                            </li>
+                            @endforeach
+                        </ul>
+                        @endif
+                    </li>
                     @endforeach
 
 
@@ -241,7 +249,7 @@
                                     <span class="position-relative">
                                         <i class="bx bx-bell bx-md"></i>
                                         <span
-                                            class="badge rounded-pill bg-danger badge-dot badge-notifications border"></span>
+                                            class="badge rounded-pill bg-info badge-dot badge-notifications border"></span>
                                     </span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end p-0">
@@ -540,7 +548,7 @@
                                 <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);"
                                     data-bs-toggle="dropdown">
                                     <div class="avatar avatar-online">
-                                        <img src="{{ asset('Administrador/assets/img/avatars/1.png') }}"
+                                        <img src="https://ui-avatars.com/api/?name={{Session::get('nombre') }}/?rounded=true&size=128"
                                             alt="" class="w-px-40 h-auto rounded-circle">
                                     </div>
                                 </a>
@@ -550,12 +558,12 @@
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
                                                     <div class="avatar avatar-online">
-                                                        <img src="{{ asset('Administrador/assets/img/avatars/1.png') }}"
+                                                        <img src="https://ui-avatars.com/api/?name={{Session::get('nombre') }}/?rounded=true&size=128"
                                                             alt="" class="w-px-40 h-auto rounded-circle">
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <h6 class="mb-0">John Doe</h6>
+                                                    <h6 class="mb-0">{{Session::get('nombre') }}</h6>
                                                     <small class="text-muted">Admin</small>
                                                 </div>
                                             </div>
@@ -566,34 +574,12 @@
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="pages-profile-user.html">
-                                            <i class="bx bx-user bx-md me-3"></i><span>My Profile</span>
+                                            <i class="bx bx-user bx-md me-3"></i><span>Mi cuenta</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="pages-account-settings-account.html">
-                                            <i class="bx bx-cog bx-md me-3"></i><span>Settings</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="pages-account-settings-billing.html">
-                                            <span class="d-flex align-items-center align-middle">
-                                                <i class="flex-shrink-0 bx bx-credit-card bx-md me-3"></i><span
-                                                    class="flex-grow-1 align-middle">Billing Plan</span>
-                                                <span class="flex-shrink-0 badge rounded-pill bg-danger">4</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <div class="dropdown-divider my-1"></div>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="pages-pricing.html">
-                                            <i class="bx bx-dollar bx-md me-3"></i><span>Pricing</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="pages-faq.html">
-                                            <i class="bx bx-help-circle bx-md me-3"></i><span>FAQ</span>
+                                            <i class="bx bx-cog bx-md me-3"></i><span>Configuración</span>
                                         </a>
                                     </li>
                                     <li>
@@ -602,7 +588,7 @@
                                     <li>
                                         <form action="{{ route('logout') }}" method="post">
                                             @csrf
-                                            <button class="dropdown-item" type="submit">Logout</button>
+                                            <button class="dropdown-item" type="submit">Cerrar Sesión</button>
                                         </form>
                                     </li>
                                 </ul>
@@ -728,22 +714,24 @@
         <script src="{{asset('Administrador/assets/js/forms-selects.js')}}"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                @if (Session::has('success'))
+                @if(Session::has('success'))
                 localStorage.removeItem('materiales');
-                    Swal.fire({
-                        icon: 'success',
-                        title: '¡Éxito!',
-                        text: '{{ Session::get('success') }}',
-                        confirmButtonText: 'Aceptar'
-                    });
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Éxito!',
+                    text: '{{ Session::get('
+                    success ') }}',
+                    confirmButtonText: 'Aceptar'
+                });
                 @endif
-                @if (Session::has('error'))
-                    Swal.fire({
-                        icon: 'error',
-                        title: '¡Error!',
-                        text: '{{ Session::get('error') }}',
-                        confirmButtonText: 'Aceptar'
-                    });
+                @if(Session::has('error'))
+                Swal.fire({
+                    icon: 'error',
+                    title: '¡Error!',
+                    text: '{{ Session::get('
+                    error ') }}',
+                    confirmButtonText: 'Aceptar'
+                });
                 @endif
             });
         </script>

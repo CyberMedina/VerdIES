@@ -96,8 +96,8 @@
 
 
     <!-- EcoTienda fontss -->
-     @if(isset($ecoTiendaFonts) && $ecoTiendaFonts)
-         <!-- font -->
+    @if(isset($ecoTiendaFonts) && $ecoTiendaFonts)
+    <!-- font -->
     <link rel="stylesheet" href="{{ asset('Cliente/assets/fonts/fonts.css') }}">
     <!-- Icons -->
     <link rel="stylesheet" href="{{ asset('Cliente/assets/fonts/font-icons.css') }}">
@@ -161,12 +161,20 @@
             @else
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo ">
+
                     <a href="index.html" class="app-brand-link">
                         <span class="app-brand-logo demo">
-                            <img src="https://res.cloudinary.com/drmoodyde/image/upload/v1729335444/iso_logo_mqaych.png" alt="" width="50">
+
+                            <img src="{{ asset('assets/img/logo/VerdIESLogo_sin_letras.png') }}" alt="" width="50">
 
                         </span>
-                        <span class="app-brand-text demo menu-text fw-bold ms-2 span-firstWord">Verd<span class="span-enphasisWord">IES</span></span>
+
+                        <style>
+                            .app-brand-logo {
+                                margin-right: -18.6px !important;
+                            }
+                        </style>
+                        <span class="app-brand-text demo menu-text fw-bold ms-2 span-firstWord">erd<span class="span-enphasisWord">IES</span></span>
                     </a>
 
                     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -181,7 +189,7 @@
                 <ul class="menu-inner py-1">
                     <!-- Dashboards -->
                     <li class="menu-item active">
-                        <a href="/clientes/inicio" class="menu-link">
+                        <a href="/clientes/inicios" class="menu-link">
                             <i class="menu-icon tf-icons bx bxs-home"></i>
                             <div class="text-truncate" data-i18n="Inicio">Inicio</div>
                         </a>
@@ -596,7 +604,7 @@
                     <div class="nav__menu" id="nav-menu">
                         <ul class="nav__list">
                             <li class="nav__item">
-                                <a href="/clientes/inicio" class="nav__link active-link">
+                                <a href="/clientes/inicios" class="nav__link active-link">
                                     <i class='bx bxs-home nav__icon'></i>
                                     <span class="nav__name">Inicio</span>
                                 </a>

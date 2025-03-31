@@ -1,29 +1,30 @@
-@charset "UTF-8";
+/* Cambios LUPE */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 .span-firstWord {
   color: #566a7f;
   font-weight: bold;
 }
 
 .span-enphasisWord {
-  color: #7ed957;
+  color: #00a5a0;
   font-weight: bold;
 }
 
 .app-brand .layout-menu-toggle {
-  background-color: #7ed957;
+  background-color: #00a5a0;
 }
 
 .app-brand .backBtn {
-  background-color: #7ed957;
+  background-color: #00a5a0;
 }
 
 .bg-menu-theme .menu-inner > .menu-item.active:before {
-  background: #7ed957;
+  background: #00a5a0;
 }
 
 .bg-menu-theme .menu-inner > .menu-item.active > .menu-link {
-  color: #7ed957;
-  background-color: rgba(126, 217, 87, 0.16) !important;
+  color: #00a5a0;
+  background-color: rgba(82, 212, 245, 0.16) !important;
 }
 
 .menu-vertical .menu-inner {
@@ -39,30 +40,361 @@
   padding-left: 1.2rem;
 }
 
-#loader {
+.bx-menu:before {
+  display: none;
+}
+
+.title span {
+  color: #00a5a0;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #00a5a0;
+  border-color: #00a5a0;
+}
+
+.bg-success {
+  background-color: #00a5a0 !important;
+}
+
+.avatar.avatar-online:after {
+  background-color: #00a5a0 !important;
+}
+
+.text-primary {
+  color: #00a5a0 !important;
+}
+
+.form-check-input:checked {
+  background-color: #00a5a0 !important;
+  border-color: #00a5a0 !important;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(105, 108, 255, 0.4);
+}
+
+.html:not([dir=rtl]) .ms-2 {
+  margin-left: 0 !important;
+}
+
+.layout-navbar .navbar-dropdown .badge-notifications {
+  top: 2px;
+  inset-inline-end: -8px !important;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #00a5a0;
+  border-color: #00a5a0;
+}
+
+.nav__link:hover {
+  color: #00a5a0 !important;
+}
+.nav__link:hover a:hover {
+  color: #00a5a0 !important;
+}
+
+.custom-demo .layout-menu-toggle {
+  position: absolute;
+  inset-inline-start: 4.2rem;
+  border-radius: 50%;
+}
+
+@media (max-width: 1199.98px) {
+  .custom-demo .layout-menu-toggle {
+    display: block !important;
+  }
+}
+html:not([dir=rtl]) .ms-auto {
+  margin-left: auto !important;
+}
+
+.app-brand .backBtn {
+  background-color: #00a5a0;
+}
+
+.app-brand .backBtn {
+  background-color: #00a5a0;
+  border: 7px solid #232333;
+}
+
+.app-brand .backBtn {
+  position: absolute;
+  inset-inline-start: 3.2rem;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 3;
+}
+
+@media screen and (max-width: 767px) {
+  .app-brand .backBtn {
+    top: 55px;
+  }
+}
+.menu:not(.menu-no-animation) .menu-link > :not(.menu-icon) {
+  transition: opacity 0.3s ease-in-out;
+}
+
+html:not([dir=rtl]) .backBtn i {
+  transform: rotate(0deg) !important;
+}
+
+.app-brand .backBtn i {
+  color: #fff;
+}
+
+.app-brand .backBtn i {
+  width: 1.375rem;
+  height: 1.375rem;
+  transition: all 0.3s ease-in-out;
+  line-height: 1;
+}
+
+/*=============== GOOGLE FONTS ===============*/
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3rem;
+  /*========== Colors ==========*/
+  --hue: 174;
+  --sat: 63%;
+  --first-color: hsl(var(--hue), var(--sat), 40%);
+  --first-color-alt: hsl(var(--hue), var(--sat), 36%);
+  --title-color: hsl(var(--hue), 12%, 15%);
+  --text-color: hsl(var(--hue), 8%, 35%);
+  --body-color: hsl(var(--hue), 100%, 99%);
+  --container-color: #FFF;
+  /*========== Font and typography ==========*/
+  --body-font: "Open Sans", sans-serif;
+  --h1-font-size: 1.5rem;
+  --normal-font-size: .938rem;
+  --tiny-font-size: .625rem;
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --h1-font-size: 2.25rem;
+    --normal-font-size: 1rem;
+  }
+}
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.nav__list,
+ol,
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+  padding: 4.5rem 0 2rem;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section__height {
+  height: 100vh;
+}
+
+/*=============== LAYOUT ===============*/
+.container {
+  max-width: 968px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/*=============== HEADER ===============*/
+.header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  background-color: var(--container-color);
+  z-index: var(--z-fixed);
+  transition: 0.4s;
+}
+
+/*=============== NAV ===============*/
+.nav {
+  height: var(--header-height);
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  z-index: 9999; /* Asegura que el loader esté por encima de otros elementos */
 }
 
-#circle {
-  animation: scaleUpDown 1.5s ease-in-out infinite alternate;
-  transform-origin: center;
-  width: 100px; /* Tamaño del SVG */
-  height: 100px;
+.nav__img {
+  width: 32px;
+  border-radius: 50%;
 }
 
-@keyframes scaleUpDown {
-  from {
-    transform: scale(1);
+.nav__logo {
+  color: var(--title-color);
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav__menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--container-color);
+    box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+    width: 100%;
+    height: 4.5rem;
+    padding: 0 1rem;
+    display: grid !important;
+    align-content: center;
+    border-radius: 1.25rem 1.25rem 0 0;
+    transition: 0.4s;
+    z-index: 5;
   }
-  to {
-    transform: scale(1.2);
+}
+.nav__menu {
+  display: none;
+}
+
+.nav__list,
+.nav__link {
+  display: flex;
+}
+
+.nav__link {
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4px;
+  color: var(--title-color);
+  font-weight: 600;
+}
+
+.nav__list {
+  justify-content: space-around;
+}
+
+.nav__name {
+  font-size: var(--tiny-font-size);
+  /* display: none;*/
+  /* Minimalist design, hidden labels */
+}
+
+.nav__icon {
+  font-size: 1.5rem;
+}
+
+/*Active link*/
+.active-link {
+  position: relative;
+  color: #00a5a0 !important;
+  transition: 0.3s;
+}
+
+/* Minimalist design, active link */
+/* .active-link::before{
+content: '';
+position: absolute;
+bottom: -.5rem;
+width: 4px;
+height: 4px;
+background-color: var(--first-color);
+border-radius: 50%;
+} */
+/* Change background header */
+.scroll-header {
+  box-shadow: 0 1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For small devices */
+/* Remove if you choose, the minimalist design */
+@media screen and (max-width: 320px) {
+  .nav__name {
+    display: none;
+  }
+}
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .nav__list {
+    justify-content: center;
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body {
+    margin: 0;
+  }
+  .section {
+    padding: 7rem 0 2rem;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+    /* 4.5rem */
+  }
+  .nav__img {
+    display: none;
+  }
+  .nav__icon {
+    display: none;
+  }
+  .nav__name {
+    font-size: var(--normal-font-size);
+    /* display: block; */
+    /* Minimalist design, visible labels */
+  }
+  .nav__link:hover {
+    color: var(--first-color) !important;
+  }
+  /* First design, remove if you choose the minimalist design */
+  .active-link::before {
+    content: "";
+    position: absolute;
+    bottom: -0.75rem;
+    width: 4px;
+    height: 4px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+  }
+  /* Minimalist design */
+  /* .active-link::before{
+  bottom: -.75rem;
+  } */
+}
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
   }
 }/*# sourceMappingURL=custom_layout.css.map */
