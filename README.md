@@ -4,6 +4,9 @@
 
 VerdIES es un sistema que incentiva el reciclaje en universidades mediante una moneda digital canjeable, tecnología solar y centros de acopio inteligentes. Los usuarios pueden localizar puntos de reciclaje a través de un mapa interactivo y recibir orientación de un asistente virtual educativo. Nuestro objetivo es fomentar hábitos sostenibles a través de la innovación y la gamificación.
 
+Por favor revisar protopio de centros de acopio:  
+[![Repo](https://img.shields.io/badge/GitHub-Visitar%20Repo-blue?style=for-the-badge&logo=github)](https://github.com/CyberMedina/Centros-de-acopio-verdIES)
+
 
 ## 👥 **Roles en la Aplicación**  
 
@@ -80,7 +83,7 @@ Agradecemos a todas las personas que han participado en el desarrollo de **VerdI
 | Nombre                  | Perfil de GitHub | Contribución |
 |-------------------------|----------------|--------------|
 | Juan José Ríos Huete     | [@juanjose23](https://github.com/juanjose23/juanjose23) | - Creación del proyecto <br> - Diseño de base de datos <br> - Desarrollo de todos los módulos de administrador |
-| Jhonatan Medina Aguirre  | [@CyberMedina](https://github.com/Colab1) | - Frontend del proyecto <br> - Integración de mapa para los centros de acopio <br> - Desarrollo de tienda para canje de promociones <br> Integración de API con los centros de acopios inteligentes  |
+| Jhonatan Medina Aguirre  | [@CyberMedina](https://github.com/Colab1) | - Frontend del proyecto <br> - Integración de mapa para los centros de acopio <br> - Desarrollo de tienda para canje de promociones <br> - Integración de API con los centros de acopios inteligentes  |
 
 
 ---
@@ -91,7 +94,7 @@ Agradecemos a todas las personas que han participado en el desarrollo de **VerdI
 
 --- 
 
-© 2024 [VerdIES].  
+© 2025 [VerdIES].  
 Todos los derechos reservados.  
 
 Este código es propiedad privada.  
